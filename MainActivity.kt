@@ -1,9 +1,11 @@
-package com.example.diceroller
+package com.example.dicerollerimage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import android.widget.TextView
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener{rollDice()}
     }
     private fun rollDice(){
+        val randomInt = (1..6).random()
+        val resultText: TextView = findViewById(R.id.resultText)
+        resultText.text = randomInt.toString()
+
         Toast.makeText(this, "Button Clicked",
             Toast.LENGTH_SHORT).show()
     }
